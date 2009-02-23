@@ -46,9 +46,7 @@ static NSString *logFormatString = @"[%@] File:%@ Line:%d\n                     
 	@synchronized(self)
 	{
 		if (sharedDebug == nil)
-		{
 			[[self alloc] init];
-		}
 	}
 	return sharedDebug;
 }
@@ -94,7 +92,7 @@ static NSString *logFormatString = @"[%@] File:%@ Line:%d\n                     
 
 - (unsigned)retainCount
 {
-	return UINT_MAX;  // An object that cannot be released
+	return UINT_MAX;
 }
 
 - (id)autorelease
