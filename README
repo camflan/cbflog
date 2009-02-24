@@ -28,8 +28,13 @@
  */
 
 
-To use:
+*NEW*
+To Try:
+- Build/Run our CFLogDemo project. Play with the settings in CFLog.h to see how it affects logging.
 
+
+To use in your projects:
+- Add CFLog.h and CFLog.m to your project.
 - Add CFLog.h to the files where you will be logging.
 - Define _CFLOG_ENABLED. You can uncomment the first config line in CFLog.h or you can add it in your project settings.
 
