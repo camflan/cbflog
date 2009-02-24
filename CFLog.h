@@ -32,13 +32,17 @@
 #import <Foundation/Foundation.h>
 
 // configuration
-#define GLOBAL_SOFT_ENABLE	YES	// turn logging on or off, globally, allowing overrides
+#define GLOBAL_SOFT_ENABLE	YES			// turn logging on or off, globally, allowing overrides
 
-#define BARE_OUTPUT			NO	// disables our verbose information
-#define LOG_FULL_PATH		NO	// file name, or fullpath to file.
+#define BARE_OUTPUT			NO			// disables our verbose information
+#define LOG_FULL_PATH		NO			// file name, or fullpath to file.
 
-#define LOG_LEVEL			5	// 0-5, this defines what levels to actually display.
-#define DEFAULT_SEVERITY	5	// if severity is not defined, use this.
+#define LOG_LEVEL			5			// 0-5, this defines what levels to actually display.
+#define DEFAULT_SEVERITY	5			// if severity is not defined, use this.
+
+#define DISABLE_NSLOG_WITH_CFLOG	1	// 0 or 1 (NO / YES).
+										// If 1 (YES) and _CFLOG_ENABLED is not defined, 
+										// NSLog statements will also be disabled.
 
 // functions
 #ifdef _CFLOG_ENABLED
@@ -59,7 +63,10 @@
 #define cfWarning(format,...)
 #define cfError(format,...)
 #define cfCritical(format,...)
+// if we are disabling nslog too, kill it.
+#if DISABLE_NSLOG_WITH_CFLOG
 #define NSLog(format, ...)
+#endif
 #endif
 
 
