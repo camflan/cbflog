@@ -1,0 +1,6 @@
+02/24/09:CBF
+	- Added simple CFLogDemo app to show how it works. Simply build/run to see
+	our output. Play around with settings in CFLog.h to see how it affects
+	logging.
+	- Added this changelog.
+	- Added `DISABLE_NSLOG_WITH_CFLOG` switch.
