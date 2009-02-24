@@ -39,7 +39,7 @@
 
 static CFLog *sharedDebug = nil;
 static NSArray *severityLevels = nil;
-static NSString *logFormatString = @"[%@] File:%@ Line:%d\n                                            %@\n\n";
+static NSString *logFormatString = @"[%@] File:%@ Line:%d\n%@\n\n"; // arg order: severity level, file name/path, line number, message
 
 + (CFLog *) sharedDebug
 {
