@@ -32,7 +32,7 @@
 #import <Foundation/Foundation.h>
 
 // configuration
-#define GLOBAL_SOFT_ENABLE	YES	// turn logging on or off, globally, allow overrides
+#define GLOBAL_SOFT_ENABLE	YES	// turn logging on or off, globally, allowing overrides
 
 #define BARE_OUTPUT			NO	// disables our verbose information
 #define LOG_FULL_PATH		NO	// file name, or fullpath to file.
