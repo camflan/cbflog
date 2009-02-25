@@ -7,16 +7,15 @@ TO TRY
 * Build/Run the CFLogDemo project. Play with the settings in CFLog.h to see how it affects logging.
 
 
-TO USE IN YOUR PROJECTS
------------------------
+TO USE
+------
 
 * Add CFLog.h and CFLog.m to your project.
 * Add CFLog.h to the files where you will be logging.
 * Define `_CFLOG_ENABLED`. You can uncomment the first config line in CFLog.h or you can add it in your project settings.
 
-NOTE
-----
 
+######TIP
     I added `-D_CFLOG_ENABLED` to my Project Settings `Other C Flags` for my DEBUG project setting profile only. This means that my release and distro project profiles don't log anything, which is what I want. Logging is a fairly expensive process, so this should improve performance for your users.
 
 
@@ -26,8 +25,8 @@ TO CONFIGURE
 * Open CFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.   
  
 
-MORE NOTES
-----------
+NOTES
+-----
 
 `cfLog` can accept a couple arguments: level and override.
 Debug levels are 1-5 `(DEBUG, INFO, WARNING, ERROR, CRITICAL)`.
