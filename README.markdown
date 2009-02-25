@@ -49,7 +49,8 @@ should improve performance for your users.
   - Open CFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.
 
 
----
+---  
+
 
 
 CFLog can accept a couple arguments: Level and Override.
