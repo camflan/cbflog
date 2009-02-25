@@ -48,6 +48,9 @@ int main (int argc, const char * argv[]) {
 	cfError(@"Here is a error level statement.");
 	cfCritical(@"Here is a critical level statment.");
 	
+	// easily add a truely blank line
+	cfBlank();
+	
 	// these will display as long as _CFLOG_ENABLED is defined, as they override
 	// the soft switch.
 	cfLog(5, YES, @"debug statment, soft switch overridden.");
@@ -56,6 +59,7 @@ int main (int argc, const char * argv[]) {
 	cfLog(2, YES, @"error statment, soft switch overridden.");
 	cfLog(1, YES, @"critical statment, soft switch overridden.");
 	
+	cfBlank();
 	
 	NSLog(@"just a nslog test.");
 	

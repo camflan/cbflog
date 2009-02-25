@@ -40,9 +40,11 @@
 static CFLog *sharedDebug = nil;
 static NSArray *severityLevels = nil;
 
-// change the log format here.
-// arg order: severity level, file name/path, line number, message
-static NSString *logFormatString = @"[%@] File:%@ Line:%d | %@"; 
+static NSString *outputLevelStringFormat = @"[%@] ";
+static NSString *fileNameStringFormat = @"%@:";
+static NSString *lineNumberStringFormat = @"%d ";
+static NSString *functionNameStringFormat = @"%s | ";
+static NSString *blankString = @"";
 
 + (CFLog *) sharedDebug
 {
@@ -110,50 +112,95 @@ static NSString *logFormatString = @"[%@] File:%@ Line:%d | %@";
 
 #pragma mark -
 #pragma mark debug methods
-- (void)log:(int)severity overrideGlobal:(BOOL)override fileName:(char *)file lineNumber:(int)line input:(NSString *)message, ...
+- (void)log:(int)severity overrideGlobal:(BOOL)override fileName:(char *)file lineNumber:(int)line functionName:(const char *)funcNameString input:(NSString *)message, ...
 {
 	// check to see if we have disabled debugging globally and return unless
 	// we want to override the global setting for this statment.
 	if(!GLOBAL_SOFT_ENABLE && !override) return;
-	if(severity > LOG_LEVEL) return;	// if we are below our threshold, return
+	
+	// if we are below our threshold, return
+	if(severity > LOG_LEVEL) return;
 	
 	va_list argList;
 	va_start(argList, message);
-	NSString *messageStr = [[NSString alloc] initWithFormat:message 
-												  arguments:argList];
+	NSString *messageString = [[[NSString alloc] initWithFormat:message 
+													  arguments:argList] autorelease];
 	va_end(argList);
 	
-	// use regular NSLog output and get out of town.
-	if(BARE_OUTPUT)
-	{
-		NSLog(messageStr);
-		return;
-	}
-	
-	// make sure we have a valid severity level.
-	int outputLevel;
-	if(severity == 0)
-		outputLevel = 1;
-	else if(!severity)
-		outputLevel = DEFAULT_SEVERITY;
-	else
-		outputLevel = severity;
 
-	NSString *outputLevelString = [NSString stringWithString:[severityLevels objectAtIndex:outputLevel]];
+	NSString *logString;
+	if(!BARE_OUTPUT)
+	{
+		NSString *filePath;
+		NSString *outputLevelString;
+		NSString *lineString;
+		NSString *functionNameString;
+		
+		if(LOG_SEVERITY)
+		{
+			int outputLevel = (severity == 0) ? 1 : severity;
+			outputLevelString = [NSString stringWithString:[severityLevels objectAtIndex:outputLevel]];
+			outputLevelString = [NSString stringWithFormat:outputLevelStringFormat, outputLevelString];
+		} else
+			outputLevelString = blankString;
+
+		if(LOG_PATH)
+		{
+			filePath = [[[NSString alloc] initWithBytes:file 
+												 length:strlen(file) 
+											   encoding:NSUTF8StringEncoding] autorelease];
+			if(!LOG_FULL_PATH)
+				filePath = [filePath lastPathComponent];
+			
+			filePath = [NSString stringWithFormat:fileNameStringFormat, filePath];
+		} else
+			filePath = blankString;
+		
+		if(LOG_LINE_NUM)
+			lineString = [NSString stringWithFormat:lineNumberStringFormat, line];
+		else
+			lineString = blankString;
+		
+		if(LOG_FUNC_NAME)
+			functionNameString = [NSString stringWithFormat:functionNameStringFormat, funcNameString];
+		else
+			functionNameString = blankString;
+		
+		logString = [[NSString alloc] initWithFormat:@"%@%@%@%@%@", outputLevelString,
+																	filePath, 
+																	lineString,
+																	functionNameString,
+																	messageString];
+	} else
+		logString = [[NSString alloc] initWithString:messageString];
 	
-	NSString *filePath = [[[NSString alloc] initWithBytes:file 
-												   length:strlen(file) 
-												 encoding:NSUTF8StringEncoding] autorelease];	
-	if(!LOG_FULL_PATH)
-		filePath = [filePath lastPathComponent];
-	
-	NSString *logString = [[[NSString alloc] initWithFormat:logFormatString, 
-															outputLevelString, 
-															filePath, 
-															line, 
-															messageStr] autorelease];
-	
-	NSLog(@"%@", logString);
+	if(USE_NSLOG)
+		NSLog(@"%@", logString);
+	else
+		printf("%s\n", [logString UTF8String]);
+}
+
+- (void)blankLine
+{
+	if(USE_NSLOG)
+		NSLog(@"\n");
+	else
+		printf("\n");
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
