@@ -28,7 +28,7 @@
      */
 
 
-######NEW###### ###To Try:
+####To Try:
     - Build/Run the CFLogDemo project. Play with the settings in CFLog.h to see how it affects logging.
 
 ####To use in your projects:
