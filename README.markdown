@@ -28,10 +28,11 @@
      */
 
 
-####To Try:
+###To Try:
   - Build/Run the CFLogDemo project. Play with the settings in CFLog.h to see how it affects logging.
 
-####To use in your projects:
+
+###To use in your projects:
   - Add CFLog.h and CFLog.m to your project.
   - Add CFLog.h to the files where you will be logging.
   - Define `_CFLOG_ENABLED`. You can uncomment the first config line in CFLog.h or you can add it in your project settings.
@@ -43,8 +44,13 @@ release and distro project profiles don't log anything, which
 is what I want. Logging is a fairly expensive process, so this 
 should improve performance for your users.
 
-####To Configure:
+
+###To Configure:
   - Open CFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.
+
+
+---
+
 
 CFLog can accept a couple arguments: Level and Override.
 Debug levels are 1-5 `(DEBUG, INFO, WARNING, ERROR, CRITICAL)`.
