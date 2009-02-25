@@ -1,5 +1,6 @@
 /* 
- * CFLog is a singleton logging object for more powerful logging in your cocoa projects
+ * CFLog is a singleton logging object for more powerful logging in 
+ * your cocoa projects
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
