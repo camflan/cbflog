@@ -26,8 +26,8 @@ TO CONFIGURE
 * Open CFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.   
  
 
-NOTE
-----
+MORE NOTES
+----------
 
 `cfLog` can accept a couple arguments: level and override.
 Debug levels are 1-5 `(DEBUG, INFO, WARNING, ERROR, CRITICAL)`.
