@@ -1,4 +1,4 @@
-02/25/09:CBF
+##02/25/09:CBF
 	- Now defaults to using printf instead of NSLog. Slightly faster, but more
 		importantly, it doesn't pollute your console/system.logs. There is also 
 		less before our information. You probably don't need
@@ -8,7 +8,9 @@
 		line, function, severity)
 	- Can now alter log statement format in segments -- one for each part of
 	the log statement.
-02/24/09:CBF
+
+
+##02/24/09:CBF
 	- Added simple CFLogDemo app to show how it works. Simply build/run to see
 		our output. Play around with settings in CFLog.h to see how it affects
 		logging.

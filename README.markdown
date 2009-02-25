@@ -46,15 +46,12 @@ should improve performance for your users.
 
 
 ###To Configure:
-  - Open CFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.
-
-
----  
-
-
+  - Open CFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.   
+ 
 
 CFLog can accept a couple arguments: Level and Override.
 Debug levels are 1-5 `(DEBUG, INFO, WARNING, ERROR, CRITICAL)`.
 Override is nice, so you can turn the GLOBAL_SOFT_ENABLE setting to NO (off) and still log a few important things without commenting out all your logging statements.
 
 I have included a few convenience functions that you can use: `cfDebug, cfInfo, cfWarning, cfError, cfCritical` are mapped to a non-forced level-specific `cfLog` call.
+
