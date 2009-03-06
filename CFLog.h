@@ -62,9 +62,10 @@
 // convenience functions
 #define cfDebug(format,...)     [[CFLog sharedDebug] log:5 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
 #define cfInfo(format,...)      [[CFLog sharedDebug] log:4 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfWarning(format,...)   [[CFLog sharedDebug] log:3 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfError(format,...)     [[CFLog sharedDebug] log:2 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfCritical(format,...)  [[CFLog sharedDebug] log:1 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfNotify(format,...)    [[CFLog sharedDebug] log:3 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfWarning(format,...)   [[CFLog sharedDebug] log:2 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfError(format,...)     [[CFLog sharedDebug] log:1 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfCritical(format,...)  [[CFLog sharedDebug] log:0 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
 #define cfBlank()				[[CFLog sharedDebug] blankLine]
 
 #else
@@ -72,6 +73,7 @@
 #define cfLog(level, override, format,...)
 #define cfDebug(format,...)
 #define cfInfo(format,...)
+#define cfNotify(format,...)
 #define cfWarning(format,...)
 #define cfError(format,...)
 #define cfCritical(format,...)

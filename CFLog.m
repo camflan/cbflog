@@ -59,12 +59,12 @@ static NSString *blankString = @"";
 + (void)initialize
 {
 	if(severityLevels == nil)
-		severityLevels = [[NSArray alloc] initWithObjects: @"", 
-						   @"CRITICAL", 
-						   @" ERROR  ", 
-						   @"WARNING ", 
-						   @"  INFO  ", 
-						   @" DEBUG  ", nil];	
+		severityLevels = [[NSArray alloc] initWithObjects:	@"CRITICAL", 
+															@" ERROR  ", 
+															@"WARNING ", 
+															@" NOTIFY ",
+															@"  INFO  ", 
+															@" DEBUG  ", nil];	
 }
 
 + (id) allocWithZone:(NSZone *) zone
@@ -138,7 +138,7 @@ static NSString *blankString = @"";
 		
 		if(LOG_SEVERITY)
 		{
-			int outputLevel = (severity == 0) ? 1 : severity;
+			int outputLevel = (severity) ? severity : 0;
 			outputLevelString = [NSString stringWithString:[severityLevels objectAtIndex:outputLevel]];
 			outputLevelString = [NSString stringWithFormat:outputLevelStringFormat, outputLevelString];
 		} else
@@ -189,18 +189,5 @@ static NSString *blankString = @"";
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
