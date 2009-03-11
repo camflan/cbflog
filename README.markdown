@@ -33,10 +33,10 @@ NOTES
 -----
 
 `cfLog` can accept a couple arguments: level and override.
-Debug levels are 1-5 `(DEBUG, INFO, WARNING, ERROR, CRITICAL)`.
+Debug levels are 1-5 `(DEBUG, INFO, WARNING, NOTIFY, ERROR, CRITICAL)`.
 Override is nice, so you can turn the GLOBAL_SOFT_ENABLE setting to NO (off) and still log a few important things without commenting out all your logging statements.
 
-I have included a few convenience functions that you can use: `cfDebug, cfInfo, cfWarning, cfError, cfCritical` are mapped to a non-forced level-specific `cfLog` call.
+I have included a few convenience functions that you can use: `cfDebug, cfInfo, cfWarning, cfNotify, cfError, cfCritical` are mapped to a non-forced level-specific `cfLog` call.
 
 
 
