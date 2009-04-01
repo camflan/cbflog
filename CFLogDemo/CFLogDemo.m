@@ -44,6 +44,7 @@ int main (int argc, const char * argv[]) {
 	// & our GLOBAL_SOFT_ENABLE switch is on (YES).
     cfDebug(@"Here is a debug level statement.");
 	cfInfo(@"Here is a info level statement.");
+	cfNotify(@"Here is a notify level statement.");
 	cfWarning(@"Here is a warning level statement.");
 	cfError(@"Here is a error level statement.");
 	cfCritical(@"Here is a critical level statment.");
@@ -55,9 +56,10 @@ int main (int argc, const char * argv[]) {
 	// the soft switch.
 	cfLog(5, YES, @"debug statment, soft switch overridden.");
 	cfLog(4, YES, @"info statment, soft switch overridden.");
-	cfLog(3, YES, @"warning statment, soft switch overridden.");
-	cfLog(2, YES, @"error statment, soft switch overridden.");
-	cfLog(1, YES, @"critical statment, soft switch overridden.");
+	cfLog(3, YES, @"notify statment, soft switch overridden.");
+	cfLog(2, YES, @"warning statment, soft switch overridden.");
+	cfLog(1, YES, @"error statment, soft switch overridden.");
+	cfLog(0, YES, @"critical statment, soft switch overridden.");
 	
 	cfBlank();
 	
