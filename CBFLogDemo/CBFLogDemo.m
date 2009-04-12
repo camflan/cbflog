@@ -42,26 +42,26 @@ int main (int argc, const char * argv[]) {
 
 	// these will display as long as you have CBFLlog enabled (_CBFLOG_ENABLED)
 	// & our GLOBAL_SOFT_ENABLE switch is on (YES).
-    cfDebug(@"Here is a debug level statement.");
-	cfInfo(@"Here is a info level statement.");
-	cfNotify(@"Here is a notify level statement.");
-	cfWarning(@"Here is a warning level statement.");
-	cfError(@"Here is a error level statement.");
-	cfCritical(@"Here is a critical level statment.");
+    cbfDebug(@"Here is a debug level statement.");
+	cbfInfo(@"Here is a info level statement.");
+	cbfNotify(@"Here is a notify level statement.");
+	cbfWarning(@"Here is a warning level statement.");
+	cbfError(@"Here is a error level statement.");
+	cbfCritical(@"Here is a critical level statment.");
 	
 	// easily add a truely blank line
-	cfBlank();
+	cbfBlank();
 	
 	// these will display as long as _CBFLOG_ENABLED is defined, as they override
 	// the soft switch.
-	cfLog(5, YES, @"debug statment, soft switch overridden.");
-	cfLog(4, YES, @"info statment, soft switch overridden.");
-	cfLog(3, YES, @"notify statment, soft switch overridden.");
-	cfLog(2, YES, @"warning statment, soft switch overridden.");
-	cfLog(1, YES, @"error statment, soft switch overridden.");
-	cfLog(0, YES, @"critical statment, soft switch overridden.");
+	cbfLog(5, YES, @"debug statment, soft switch overridden.");
+	cbfLog(4, YES, @"info statment, soft switch overridden.");
+	cbfLog(3, YES, @"notify statment, soft switch overridden.");
+	cbfLog(2, YES, @"warning statment, soft switch overridden.");
+	cbfLog(1, YES, @"error statment, soft switch overridden.");
+	cbfLog(0, YES, @"critical statment, soft switch overridden.");
 	
-	cfBlank();
+	cbfBlank();
 	
 	NSLog(@"just a nslog test.");
 	
