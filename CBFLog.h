@@ -1,5 +1,5 @@
 /* 
- * CFLog is a singleton logging object for more powerful logging in your cocoa projects
+ * CBFLog is a singleton logging object for more powerful logging in your cocoa projects
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,7 +22,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * CFLog.h
+ * CBFLog.h
  * 
  * Created by Camron Flanders on 2.23.09
  * Copyright 2009 camronflanders. All rights reserved.
@@ -31,7 +31,7 @@
 
 #import <Foundation/Foundation.h>
 
-/* ****** CFLog CONFIGURATION ****** */
+/* ****** CBFLog CONFIGURATION ****** */
 #define GLOBAL_SOFT_ENABLE	YES			// turn logging on or off, globally, allowing overrides
 #define LOG_LEVEL			5			// 0-5, this defines what levels to actually display.
 
@@ -48,25 +48,25 @@
 #define LOG_FUNC_NAME       YES         // if YES, function containing log will be output 
 
 
-#define DISABLE_NSLOG_WITH_CFLOG	1	// 0 or 1 (NO / YES).
-										// If 1 (YES) and _CFLOG_ENABLED is not defined, 
+#define DISABLE_NSLOG_WITH_CBFLOG	1	// 0 or 1 (NO / YES).
+										// If 1 (YES) and _CBFLOG_ENABLED is not defined, 
 										// NSLog statements will also be disabled.
 
 /* ****** END CONFIGURATION ******* */
 
 
 // functions
-#ifdef _CFLOG_ENABLED
-#define cfLog(level, override, format,...) [[CFLog sharedDebug] log:(level) overrideGlobal:(override) fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#ifdef _CBFLOG_ENABLED
+#define cfLog(level, override, format,...) [[CBFLog sharedDebug] log:(level) overrideGlobal:(override) fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
 
 // convenience functions
-#define cfDebug(format,...)     [[CFLog sharedDebug] log:5 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfInfo(format,...)      [[CFLog sharedDebug] log:4 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfNotify(format,...)    [[CFLog sharedDebug] log:3 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfWarning(format,...)   [[CFLog sharedDebug] log:2 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfError(format,...)     [[CFLog sharedDebug] log:1 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfCritical(format,...)  [[CFLog sharedDebug] log:0 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cfBlank()				[[CFLog sharedDebug] blankLine]
+#define cfDebug(format,...)     [[CBFLog sharedDebug] log:5 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfInfo(format,...)      [[CBFLog sharedDebug] log:4 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfNotify(format,...)    [[CBFLog sharedDebug] log:3 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfWarning(format,...)   [[CBFLog sharedDebug] log:2 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfError(format,...)     [[CBFLog sharedDebug] log:1 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfCritical(format,...)  [[CBFLog sharedDebug] log:0 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
+#define cfBlank()				[[CBFLog sharedDebug] blankLine]
 
 #else
 // clear all functions so we don't waste any processing overhead while not in DEBUG
@@ -79,17 +79,17 @@
 #define cfCritical(format,...)
 #define cfBlank()
 // if we are disabling nslog too, kill it.
-#if DISABLE_NSLOG_WITH_CFLOG
+#if DISABLE_NSLOG_WITH_CBFLOG
 #define NSLog(format, ...)
 #endif
 #endif
 
 
 
-@interface CFLog : NSObject {
+@interface CBFLog : NSObject {
 }
 
-+ (CFLog *)sharedDebug;
++ (CBFLog *)sharedDebug;
 
 - (void)log:(int)severity overrideGlobal:(BOOL)override fileName:(char *)file lineNumber:(int)line functionName:(const char *)function input:(NSString *)message, ...;
 - (void)blankLine;

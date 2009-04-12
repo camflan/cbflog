@@ -1,5 +1,5 @@
 /* 
- * CFLog is a singleton logging object for more powerful logging in your cocoa projects
+ * CBFLog is a singleton logging object for more powerful logging in your cocoa projects
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,7 +22,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * CFLogDemo.m
+ * CBFLogDemo.m
  * 
  * Created by Camron Flanders on 2.23.09
  * Copyright 2009 camronflanders. All rights reserved.
@@ -31,7 +31,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "CFLog.h"
+#import "CBFLog.h"
 
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
@@ -40,7 +40,7 @@ int main (int argc, const char * argv[]) {
 	// i.e. if LOG_LEVEL is at level 3 (warning), then WARNING, ERROR, & CRITICAL
 	// messages will be output.
 
-	// these will display as long as you have CFLlog enabled (_CFLOG_ENABLED)
+	// these will display as long as you have CBFLlog enabled (_CBFLOG_ENABLED)
 	// & our GLOBAL_SOFT_ENABLE switch is on (YES).
     cfDebug(@"Here is a debug level statement.");
 	cfInfo(@"Here is a info level statement.");
@@ -52,7 +52,7 @@ int main (int argc, const char * argv[]) {
 	// easily add a truely blank line
 	cfBlank();
 	
-	// these will display as long as _CFLOG_ENABLED is defined, as they override
+	// these will display as long as _CBFLOG_ENABLED is defined, as they override
 	// the soft switch.
 	cfLog(5, YES, @"debug statment, soft switch overridden.");
 	cfLog(4, YES, @"info statment, soft switch overridden.");

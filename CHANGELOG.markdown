@@ -1,4 +1,4 @@
-changelog for CFLog
+changelog for CBFLog
 ===================
 
 02/25/09:CBF
@@ -16,9 +16,9 @@ the log statement.
 
 02/24/09:CBF
 ------------
-- Added simple CFLogDemo app to show how it works. Simply build/run to see
-	our output. Play around with settings in CFLog.h to see how it affects
+- Added simple CBFLogDemo app to show how it works. Simply build/run to see
+	our output. Play around with settings in CBFLog.h to see how it affects
 	logging.
 - Added this changelog.
-- Added `DISABLE_NSLOG_WITH_CFLOG` switch.
+- Added `DISABLE_NSLOG_WITH_CBFLOG` switch.
 

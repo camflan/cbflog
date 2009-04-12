@@ -1,22 +1,22 @@
-CFLog
+CBFLog
 =====
 
 TRY
 ----
 
-* Build/Run the CFLogDemo project. Play with the settings in CFLog.h to see how it affects logging.
+* Build/Run the CBFLogDemo project. Play with the settings in CBFLog.h to see how it affects logging.
 
 
 USE
 ---
 
-* Add CFLog.h and CFLog.m to your project.
-* Add CFLog.h to the files where you will be logging.
-* Define `_CFLOG_ENABLED`. You can uncomment the first config line in CFLog.h or you can add it in your project settings.
+* Add CBFLog.h and CBFLog.m to your project.
+* Add CBFLog.h to the files where you will be logging.
+* Define `_CBFLOG_ENABLED`. You can uncomment the first config line in CBFLog.h or you can add it in your project settings.
 
 TIP
 ---
-    I added `-D_CFLOG_ENABLED` to my Project Settings `Other C Flags` for 
+    I added `-D_CBFLOG_ENABLED` to my Project Settings `Other C Flags` for 
     my DEBUG project setting profile only. This means that my release and 
     distro project profiles don't log anything, which is what I want. 
     Logging is a fairly expensive process, so this should improve 
@@ -26,7 +26,7 @@ TIP
 CONFIGURE
 ---------
 
-* Open CFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.   
+* Open CBFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.   
  
 
 NOTES

@@ -1,5 +1,5 @@
 /* 
- * CFLog is a singleton logging object for more powerful logging in your cocoa projects
+ * CBFLog is a singleton logging object for more powerful logging in your cocoa projects
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,7 +22,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * CFLogDemo_Prefix.pch
+ * CBFLogDemo_Prefix.pch
  * 
  * Created by Camron Flanders on 2.23.09
  * Copyright 2009 camronflanders. All rights reserved.

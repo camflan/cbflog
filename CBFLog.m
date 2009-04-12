@@ -1,5 +1,5 @@
 /* 
- * CFLog is a singleton logging object for more powerful logging in your cocoa projects
+ * CBFLog is a singleton logging object for more powerful logging in your cocoa projects
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,22 +22,22 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * CFLog.m
+ * CBFLog.m
  * 
  * Created by Camron Flanders on 2.23.09
  * Copyright 2009 camronflanders. All rights reserved.
  * 
  */
 
-#import "CFLog.h"
+#import "CBFLog.h"
 
 
-@implementation CFLog
+@implementation CBFLog
 
 #pragma mark -
 #pragma mark SINGLETON STUFF
 
-static CFLog *sharedDebug = nil;
+static CBFLog *sharedDebug = nil;
 static NSArray *severityLevels = nil;
 
 static NSString *outputLevelStringFormat = @"[%@] ";
@@ -46,7 +46,7 @@ static NSString *lineNumberStringFormat = @"%d ";
 static NSString *functionNameStringFormat = @"%s | ";
 static NSString *blankString = @"";
 
-+ (CFLog *) sharedDebug
++ (CBFLog *) sharedDebug
 {
 	@synchronized(self)
 	{
