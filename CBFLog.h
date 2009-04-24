@@ -66,7 +66,7 @@
 #define cbfWarning(format,...)   [[CBFLog sharedDebug] log:2 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
 #define cbfError(format,...)     [[CBFLog sharedDebug] log:1 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
 #define cbfCritical(format,...)  [[CBFLog sharedDebug] log:0 overrideGlobal:NO fileName:__FILE__ lineNumber:__LINE__ functionName:__PRETTY_FUNCTION__ input:(format), ##__VA_ARGS__]
-#define cbfBlank()				[[CBFLog sharedDebug] blankLine]
+#define cbfBlank()				 [[CBFLog sharedDebug] blankLine]
 
 #else
 // clear all functions so we don't waste any processing overhead while not in DEBUG
