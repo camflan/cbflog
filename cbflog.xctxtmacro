@@ -1,0 +1,70 @@
+(
+	{
+		Identifier = cbflog;
+		Name = CBFLog;
+		IsMenu = YES;
+		IncludeContexts = (
+			"xcode.lang.objc",
+		);
+		ExcludeContexts = (
+			"xcode.lang.string",
+			"xcode.lang.character",
+			"xcode.lang.comment",
+			"xcode.lang.c.preprocessor",
+		);
+	},
+
+	{
+		Identifier = "cbflog.debug";
+		BasedOn = objc;
+		IsMenuItem = YES;
+		Name = "Debug Statement";
+		TextString = "cbfDebug$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#>\"$(InFunctionArgsSpacing));";
+		CompletionPrefix = "dlog";
+	},
+
+	{
+		Identifier = "cbflog.info";
+		BasedOn = objc;
+		IsMenuItem = YES;
+		Name = "Info Statement";
+		TextString = "cbfInfo$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#>\"$(InFunctionArgsSpacing));";
+		CompletionPrefix = "ilog";
+	},
+
+	{
+		Identifier = "cbflog.notify";
+		BasedOn = objc;
+		IsMenuItem = YES;
+		Name = "Notify Statement";
+		TextString = "cbfNotify$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#>\"$(InFunctionArgsSpacing));";
+		CompletionPrefix = "nlog";
+	},
+
+	{
+		Identifier = "cbflog.warn";
+		BasedOn = objc;
+		IsMenuItem = YES;
+		Name = "Warning Statement";
+		TextString = "cbfWarning$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#>\"$(InFunctionArgsSpacing));";
+		CompletionPrefix = "wlog";
+	},
+
+	{
+		Identifier = "cbflog.error";
+		BasedOn = objc;
+		IsMenuItem = YES;
+		Name = "Error Statement";
+		TextString = "cbfError$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#>\"$(InFunctionArgsSpacing));";
+		CompletionPrefix = "elog";
+	},
+
+	{
+		Identifier = "cbflog.critical";
+		BasedOn = objc;
+		IsMenuItem = YES;
+		Name = "Critical Statement";
+		TextString = "cbfCritical$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#>\"$(InFunctionArgsSpacing));";
+		CompletionPrefix = "clog";
+	},
+)
