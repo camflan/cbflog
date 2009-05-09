@@ -41,7 +41,8 @@ Override is nice, so you can turn the GLOBAL_SOFT_ENABLE setting to NO (off) and
 
 I have included a few convenience functions that you can use: `cbfDebug, cbfInfo, cbfNotify, cbfWarning, cbfError, cbfCritical` are mapped to a non-forced level-specific `cbfLog` call.
 
-For even more convenient use, you can use the text macros. (the <message> syntax indicates these are arg bubbles that you can jump to/change.)
+For even more convenient use, you can use the text macros. 
+(`<message>` indicates the arg bubbles that you can jump to & change)
     
     dlog expands to cbfDebug(@"<message>");
     ilog expands to cbfInfo(@"<message>");
