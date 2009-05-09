@@ -14,6 +14,9 @@ USE
 * Add CBFLog.h to the files where you will be logging.
 * Define `_CBFLOG_ENABLED`. You can uncomment the first config line in CBFLog.h or you can add it in your project settings.
 
+* Optional:
+  Add cbflog.xctxtmacros to your Text Macros directory. (`~/Library/Application Support/Developer/Shared/Xcode/Specifications`)
+
 TIP
 ---
     I added `-D_CBFLOG_ENABLED` to my Project Settings `Other C Flags` for 
@@ -38,6 +41,14 @@ Override is nice, so you can turn the GLOBAL_SOFT_ENABLE setting to NO (off) and
 
 I have included a few convenience functions that you can use: `cbfDebug, cbfInfo, cbfNotify, cbfWarning, cbfError, cbfCritical` are mapped to a non-forced level-specific `cbfLog` call.
 
+For even more convenient use, you can use the text macros. (the <message> syntax indicates these are arg bubbles that you can jump to/change.)
+    
+    dlog expands to cbfDebug(@"<message>");
+    ilog expands to cbfInfo(@"<message>");
+    nlog expands to cbfNotify(@"<message>");
+    wlog expands to cbfWarning(@"<message>");
+    elog expands to cbfError(@"<message>");
+    clog expands to cbfCritical(@"<message>");
 
 
 LICENSE

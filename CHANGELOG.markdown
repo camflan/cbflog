@@ -1,6 +1,12 @@
 changelog for CBFLog
 ===================
 
+05/09/09:CBF
+------------
+- Added a text macros definition for xCode. Just drop it in your textmacros
+directory. (~/Library/Application
+Support/Developer/Shared/Xcode/Specifications/)
+
 02/25/09:CBF
 ------------
 - Now defaults to using printf instead of NSLog. Slightly faster, but more
