@@ -48,16 +48,15 @@ static NSString *blankString = @"";
 
 + (CBFLog *) sharedDebug
 {
-	@synchronized(self)
-	{
-		if (sharedDebug == nil)
-			[[self alloc] init];
-	}
 	return sharedDebug;
 }
 
 + (void)initialize
 {
+	
+	if(!sharedDebug) 
+		sharedDebug = [[self alloc] init];
+	
 	if(severityLevels == nil)
 		severityLevels = [[NSArray alloc] initWithObjects:	@"CRITICAL", 
 															@" ERROR  ", 
@@ -69,45 +68,29 @@ static NSString *blankString = @"";
 
 + (id) allocWithZone:(NSZone *) zone
 {
-	@synchronized(self)
+	if (sharedDebug) 
 	{
-		if (sharedDebug == nil)
-		{
-			sharedDebug = [super allocWithZone:zone];
-			return sharedDebug;
-		}
+		//The caller expects to receive a new object, so implicitly retain it to balance out the caller's eventual release message.
+		return [sharedDebug retain];
+	}
+	else
+	{
+		//When not already set, +initialize is our caller—it's creating the shared instance. Let this go through.
+		return [super allocWithZone:zone];
 	}
 	return nil;
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
-	return self;
-}
+- (id) init {
+    if (!hasInited) 
+	{
+        if ((self = [super init])) 
+		{
+            hasInited = YES;
+        }
+    }
 
-- (id)retain
-{
-	return self;
-}
-
-- (void)release
-{
-	// No action required...
-}
-
-- (unsigned)retainCount
-{
-	return UINT_MAX;
-}
-
-- (id)autorelease
-{
-	return self;
-}
-
-- (void)dealloc
-{
-	[super dealloc];
+    return self;
 }
 
 #pragma mark -
@@ -166,13 +149,13 @@ static NSString *blankString = @"";
 		else
 			functionNameString = blankString;
 		
-		logString = [[NSString alloc] initWithFormat:@"%@%@%@%@%@", outputLevelString,
+		logString = [[[NSString alloc] initWithFormat:@"%@%@%@%@%@", outputLevelString,
 																	filePath, 
 																	lineString,
 																	functionNameString,
-																	messageString];
+																	messageString] autorelease];
 	} else
-		logString = [[NSString alloc] initWithString:messageString];
+		logString = [[[NSString alloc] initWithString:messageString] autorelease];
 	
 	if(USE_NSLOG)
 		NSLog(@"%@", logString);

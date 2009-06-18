@@ -87,6 +87,7 @@
 
 
 @interface CBFLog : NSObject {
+	BOOL hasInited;
 }
 
 + (CBFLog *)sharedDebug;
