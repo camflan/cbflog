@@ -1,6 +1,17 @@
 changelog for CBFLog
 ===================
 
+06/18/09:CBF (PB)
+------------------
+- Patrick (pburleson) was kind enough to fix our singleton object. There was lots of
+discussion about this on twitter the other night, and now it's fixed. We
+now have a proper singleton instance that fixes the retain/release issues
+that the sample singleton code from Apple introduced.
+
+blog post describing the issue & fix: http://boredzo.org/blog/archives/2009-06-17/doing-it-wrong
+
+Thank you for taking care of this, Patrick!
+
 05/09/09:CBF
 ------------
 - Added a text macros definition for xCode. Just drop it in your textmacros

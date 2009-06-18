@@ -30,6 +30,11 @@ CONFIGURE
 ---------
 
 * Open CBFLog.h and edit settings in the `CONFIGURATION` area. All of the settings should be well documented.   
+
+CONTRIBUTORS
+------------
+Camron Flanders (camflan)
+Patrick Burleson (pburleson)
  
 
 NOTES
