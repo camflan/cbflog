@@ -31,6 +31,28 @@
 
 #import "CBFLog.h"
 
+@interface NSString (CBFStringAdditions)
+- (NSString *)handleWithMaxLength:(int)theLength;
+@end
+
+@implementation NSString (CBFStringAdditions)
+
+- (NSString *)handleWithMaxLength:(int)theLength {
+	if([self length] <= theLength) {
+		return [self stringByPaddingToLength:theLength withString:@" " startingAtIndex:0];
+	} else {
+		NSRange range;
+		range.length = theLength - [self length];
+		range.location = (range.length % 2) ? floor([self length]/2 + 1) : [self length]/2;
+		
+		return [self stringByReplacingCharactersInRange:range withString:@"..."];
+	}
+}
+
+@end
+
+
+
 
 @implementation CBFLog
 
@@ -41,9 +63,15 @@ static CBFLog *sharedDebug = nil;
 static NSArray *severityLevels = nil;
 
 static NSString *outputLevelStringFormat = @"[%@] ";
-static NSString *fileNameStringFormat = @"%@:";
 static NSString *lineNumberStringFormat = @"%d ";
 static NSString *functionNameStringFormat = @"%s | ";
+
+NSString *filePathString;
+NSString *levelString;
+NSString *lineNumString;
+NSString *functionNameString;
+NSString *dateString;
+
 static NSString *blankString = @"";
 
 + (CBFLog *) sharedDebug
@@ -52,18 +80,17 @@ static NSString *blankString = @"";
 }
 
 + (void)initialize
-{
-	
+{	
 	if(!sharedDebug) 
 		sharedDebug = [[self alloc] init];
-	
+		
 	if(severityLevels == nil)
 		severityLevels = [[NSArray alloc] initWithObjects:	@"CRITICAL", 
 															@" ERROR  ", 
 															@"WARNING ", 
 															@" NOTIFY ",
 															@"  INFO  ", 
-															@" DEBUG  ", nil];	
+															@" DEBUG  ", nil];
 }
 
 + (id) allocWithZone:(NSZone *) zone
@@ -114,46 +141,46 @@ static NSString *blankString = @"";
 	NSString *logString;
 	if(!BARE_OUTPUT)
 	{
-		NSString *filePath;
-		NSString *outputLevelString;
-		NSString *lineString;
-		NSString *functionNameString;
 		
 		if(LOG_SEVERITY)
 		{
 			int outputLevel = (severity) ? severity : 0;
-			outputLevelString = [NSString stringWithString:[severityLevels objectAtIndex:outputLevel]];
-			outputLevelString = [NSString stringWithFormat:outputLevelStringFormat, outputLevelString];
+			levelString = [NSString stringWithString:[severityLevels objectAtIndex:outputLevel]];
+			levelString = [NSString stringWithFormat:outputLevelStringFormat, levelString];
 		} else
-			outputLevelString = blankString;
+			levelString = blankString;
 
 		if(LOG_PATH)
 		{
-			filePath = [[[NSString alloc] initWithBytes:file 
+			filePathString = [[[NSString alloc] initWithBytes:file 
 												 length:strlen(file) 
 											   encoding:NSUTF8StringEncoding] autorelease];
 			if(!LOG_FULL_PATH)
-				filePath = [filePath lastPathComponent];
-			
-			filePath = [NSString stringWithFormat:fileNameStringFormat, filePath];
+				filePathString = [filePathString lastPathComponent];
 		} else
-			filePath = blankString;
+			filePathString = blankString;
+							
+		filePathString = [filePathString handleWithMaxLength:FILE_NAME_LENGTH];
 		
 		if(LOG_LINE_NUM)
-			lineString = [NSString stringWithFormat:lineNumberStringFormat, line];
+			lineNumString = [NSString stringWithFormat:lineNumberStringFormat, line];
 		else
-			lineString = blankString;
+			lineNumString = blankString;
+		
+		lineNumString = [lineNumString stringByPaddingToLength:LINE_NUM_PADDING withString:@" " startingAtIndex:0];
 		
 		if(LOG_FUNC_NAME)
 			functionNameString = [NSString stringWithFormat:functionNameStringFormat, funcNameString];
 		else
 			functionNameString = blankString;
 		
-		logString = [[[NSString alloc] initWithFormat:@"%@%@%@%@%@", outputLevelString,
-																	filePath, 
-																	lineString,
-																	functionNameString,
-																	messageString] autorelease];
+		functionNameString = [functionNameString handleWithMaxLength:FUNC_NAME_LENGTH];
+		
+		logString = [[[NSString alloc] initWithFormat:@"%@%@%@%@%@", levelString,
+																	 filePathString, 
+																	 lineNumString,
+																	 functionNameString,
+																	 messageString] autorelease];
 	} else
 		logString = [[[NSString alloc] initWithString:messageString] autorelease];
 	

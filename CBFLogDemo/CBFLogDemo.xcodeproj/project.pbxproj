@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4317C3A80F545BB40022CBC2 /* CFLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4317C3A70F545BB40022CBC2 /* CFLog.m */; };
-		8DD76F9A0486AA7600D96B5E /* CFLogDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* CFLogDemo.m */; settings = {ATTRIBUTES = (); }; };
+		40CACDA61046F7CC00B380FA /* CBFLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CACDA51046F7CC00B380FA /* CBFLog.m */; };
+		8DD76F9A0486AA7600D96B5E /* CBFLogDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* CBFLogDemo.m */; settings = {ATTRIBUTES = (); }; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
-		8DD76F9F0486AA7600D96B5E /* CFLogDemo.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* CFLogDemo.1 */; };
+		8DD76F9F0486AA7600D96B5E /* CBFLogDemo.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* CBFLogDemo.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,20 +20,20 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				8DD76F9F0486AA7600D96B5E /* CFLogDemo.1 in CopyFiles */,
+				8DD76F9F0486AA7600D96B5E /* CBFLogDemo.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08FB7796FE84155DC02AAC07 /* CFLogDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLogDemo.m; sourceTree = "<group>"; };
+		08FB7796FE84155DC02AAC07 /* CBFLogDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFLogDemo.m; sourceTree = "<group>"; };
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32A70AAB03705E1F00C91783 /* CFLogDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFLogDemo_Prefix.pch; sourceTree = "<group>"; };
-		4317C3A60F545BB40022CBC2 /* CFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFLog.h; path = ../CFLog.h; sourceTree = SOURCE_ROOT; };
-		4317C3A70F545BB40022CBC2 /* CFLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFLog.m; path = ../CFLog.m; sourceTree = SOURCE_ROOT; };
-		8DD76FA10486AA7600D96B5E /* CFLogDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CFLogDemo; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6859EA3029092ED04C91782 /* CFLogDemo.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CFLogDemo.1; sourceTree = "<group>"; };
+		32A70AAB03705E1F00C91783 /* CBFLogDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFLogDemo_Prefix.pch; sourceTree = "<group>"; };
+		40CACDA41046F7CC00B380FA /* CBFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBFLog.h; path = ../CBFLog.h; sourceTree = SOURCE_ROOT; };
+		40CACDA51046F7CC00B380FA /* CBFLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBFLog.m; path = ../CBFLog.m; sourceTree = SOURCE_ROOT; };
+		8DD76FA10486AA7600D96B5E /* CBFLogDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CBFLogDemo; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6859EA3029092ED04C91782 /* CBFLogDemo.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CBFLogDemo.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08FB7794FE84155DC02AAC07 /* CFLogDemo */ = {
+		08FB7794FE84155DC02AAC07 /* CBFLogDemo */ = {
 			isa = PBXGroup;
 			children = (
 				08FB7795FE84155DC02AAC07 /* Source */,
@@ -56,16 +56,16 @@
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 			);
-			name = CFLogDemo;
+			name = CBFLogDemo;
 			sourceTree = "<group>";
 		};
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4317C3A60F545BB40022CBC2 /* CFLog.h */,
-				4317C3A70F545BB40022CBC2 /* CFLog.m */,
-				32A70AAB03705E1F00C91783 /* CFLogDemo_Prefix.pch */,
-				08FB7796FE84155DC02AAC07 /* CFLogDemo.m */,
+				40CACDA41046F7CC00B380FA /* CBFLog.h */,
+				40CACDA51046F7CC00B380FA /* CBFLog.m */,
+				32A70AAB03705E1F00C91783 /* CBFLogDemo_Prefix.pch */,
+				08FB7796FE84155DC02AAC07 /* CBFLogDemo.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -81,7 +81,7 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DD76FA10486AA7600D96B5E /* CFLogDemo */,
+				8DD76FA10486AA7600D96B5E /* CBFLogDemo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,7 +89,7 @@
 		C6859EA2029092E104C91782 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				C6859EA3029092ED04C91782 /* CFLogDemo.1 */,
+				C6859EA3029092ED04C91782 /* CBFLogDemo.1 */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
@@ -97,9 +97,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8DD76F960486AA7600D96B5E /* CFLogDemo */ = {
+		8DD76F960486AA7600D96B5E /* CBFLogDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "CFLogDemo" */;
+			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "CBFLogDemo" */;
 			buildPhases = (
 				8DD76F990486AA7600D96B5E /* Sources */,
 				8DD76F9B0486AA7600D96B5E /* Frameworks */,
@@ -109,10 +109,10 @@
 			);
 			dependencies = (
 			);
-			name = CFLogDemo;
+			name = CBFLogDemo;
 			productInstallPath = "$(HOME)/bin";
-			productName = CFLogDemo;
-			productReference = 8DD76FA10486AA7600D96B5E /* CFLogDemo */;
+			productName = CBFLogDemo;
+			productReference = 8DD76FA10486AA7600D96B5E /* CBFLogDemo */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -120,14 +120,14 @@
 /* Begin PBXProject section */
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "CFLogDemo" */;
+			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "CBFLogDemo" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 08FB7794FE84155DC02AAC07 /* CFLogDemo */;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* CBFLogDemo */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DD76F960486AA7600D96B5E /* CFLogDemo */,
+				8DD76F960486AA7600D96B5E /* CBFLogDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -137,8 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD76F9A0486AA7600D96B5E /* CFLogDemo.m in Sources */,
-				4317C3A80F545BB40022CBC2 /* CFLog.m in Sources */,
+				8DD76F9A0486AA7600D96B5E /* CBFLogDemo.m in Sources */,
+				40CACDA61046F7CC00B380FA /* CBFLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +155,9 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CFLogDemo_Prefix.pch;
+				GCC_PREFIX_HEADER = CBFLogDemo_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = CFLogDemo;
+				PRODUCT_NAME = CBFLogDemo;
 			};
 			name = Debug;
 		};
@@ -168,9 +168,9 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CFLogDemo_Prefix.pch;
+				GCC_PREFIX_HEADER = CBFLogDemo_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = CFLogDemo;
+				PRODUCT_NAME = CBFLogDemo;
 			};
 			name = Release;
 		};
@@ -183,7 +183,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "-D_CFLOG_ENABLED";
+				OTHER_CFLAGS = "-D_CBFLOG_ENABLED";
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};
@@ -204,7 +204,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "CFLogDemo" */ = {
+		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "CBFLogDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB927508733DD40010E9CD /* Debug */,
@@ -213,7 +213,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "CFLogDemo" */ = {
+		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "CBFLogDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB927908733DD40010E9CD /* Debug */,

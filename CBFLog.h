@@ -47,8 +47,11 @@
 #define LOG_LINE_NUM        YES         // if YES, line number of log statment will be output
 #define LOG_FUNC_NAME       YES         // if YES, function containing log will be output 
 
+#define FILE_NAME_LENGTH	20			// length of file name in output. name will be center-truncated if longer, padded if shorter.
+#define FUNC_NAME_LENGTH	20			// length of function name in output. name will be center-truncated if longer, padded if shorter.
+#define LINE_NUM_PADDING	4			// digits to pad line num
 
-#define DISABLE_NSLOG_WITH_CBFLOG	1	// 0 or 1 (NO / YES).
+#define DISABLE_NSLOG_WITH_CBFLOG	0	// 0 or 1 (NO / YES).
 										// If 1 (YES) and _CBFLOG_ENABLED is not defined, 
 										// NSLog statements will also be disabled.
 
