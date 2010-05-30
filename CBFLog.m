@@ -42,9 +42,10 @@
 		return [self stringByPaddingToLength:theLength withString:@" " startingAtIndex:0];
 	} else {
 		NSRange range;
-		range.length = theLength - [self length];
-		range.location = (range.length % 2) ? floor([self length]/2 + 1) : [self length]/2;
 		
+		range.length = abs(theLength - [self length]);
+		range.location = floor(range.length/2);
+				
 		return [self stringByReplacingCharactersInRange:range withString:@"..."];
 	}
 }
