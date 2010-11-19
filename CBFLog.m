@@ -42,9 +42,9 @@
 		return [self stringByPaddingToLength:theLength withString:@" " startingAtIndex:0];
 	} else {
 		NSRange range;
-		
-		range.length = abs(theLength - [self length]);
-		range.location = floor(range.length/2);
+		int maxLength = theLength - 3; // 3 is the length of the separator
+		range.length = [self length] - maxLength;
+		range.location = floor(maxLength/2);
 				
 		return [self stringByReplacingCharactersInRange:range withString:@"..."];
 	}
