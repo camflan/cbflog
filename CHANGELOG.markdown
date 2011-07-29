@@ -1,6 +1,14 @@
 changelog for CBFLog
 ===================
 
+07/29/11:CBF (PB)
+-----------------
+- Changed file param char* to const char* to remove a compiler warning with objc++
+
+11/18/10:CBF (PB)
+-----------------
+- Fixed issue with truncation when the string exceeded 60 characters. At that point, the math broke down and started putting positions and lengths outside the bounds of the string. This change will always center truncate regardless of string length.
+
 06/18/09:CBF (PB)
 ------------------
 - Patrick (pburleson) was kind enough to fix our singleton object. There was lots of
