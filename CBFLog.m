@@ -123,7 +123,7 @@ static NSString *blankString = @"";
 
 #pragma mark -
 #pragma mark debug methods
-- (void)log:(int)severity overrideGlobal:(BOOL)override fileName:(char *)file lineNumber:(int)line functionName:(const char *)funcNameString input:(NSString *)message, ...
+- (void)log:(int)severity overrideGlobal:(BOOL)override fileName:(const char *)file lineNumber:(int)line functionName:(const char *)funcNameString input:(NSString *)message, ...
 {
 	// check to see if we have disabled debugging globally and return unless
 	// we want to override the global setting for this statment.

@@ -95,6 +95,6 @@
 
 + (CBFLog *)sharedDebug;
 
-- (void)log:(int)severity overrideGlobal:(BOOL)override fileName:(char *)file lineNumber:(int)line functionName:(const char *)function input:(NSString *)message, ...;
+- (void)log:(int)severity overrideGlobal:(BOOL)override fileName:(const char *)file lineNumber:(int)line functionName:(const char *)function input:(NSString *)message, ...;
 - (void)blankLine;
 @end
